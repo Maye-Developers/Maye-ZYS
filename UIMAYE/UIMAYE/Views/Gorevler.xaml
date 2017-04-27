@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIMAYE.Gorevler"
+             xmlns:pages="clr-namespace:UIMAYE;assembly=UIMAYE"
+             Title="TabbedPage"
+             xmlns:local="clr-namespace:UIMAYE.CustomControls;assembly=UIMAYE">
+    <ContentPage Icon="projeler.png" Title="Görev Listesi">
+        <ListView x:Name="listGorevler" HasUnevenRows="True" Header="" ItemTapped="listGorevler_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="12">
+                            <Label Text="{Binding .}" FontSize="16"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage>
+    <ContentPage Icon="pEkle" Title="Görev Ekle">
+        <StackLayout Spacing="10" Padding="20">
+            <local:LoginPageEntry x:Name="gorevAdi" 
+                    Placeholder="Proje Adı Giriniz." 
+                   PlaceholderColor="#08182b"
+        TextColor="#08182b">
+
+              </local:LoginPageEntry>
+            <Grid>
+                <Label VerticalOptions="Center" FontSize="16" Grid.Row="0" Grid.Column="0" Text="Görev Öncelik" TextColor="#f1404b"></Label>
+                <Switch  Grid.Row="0" Grid.Column="1" x:Name="gorevOncelik"></Switch>
+                
+            </Grid>
+            <ActivityIndicator IsRunning="False" x:Name="gorevInd"></ActivityIndicator>
+            <Button HorizontalOptions="End" Text="Görev Oluştur"
+					BackgroundColor="#ee2560"
+					BorderRadius="5"
+					TextColor="White"
+					HeightRequest="50"
+					FontAttributes="Bold"
+                    Clicked="gorevEkle">
+            </Button>
+        </StackLayout>
+    </ContentPage>
+
+</TabbedPage>

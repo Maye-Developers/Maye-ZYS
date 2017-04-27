@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIMAYE.Views.Singing"
+              xmlns:local="clr-namespace:UIMAYE.CustomControls;assembly=UIMAYE"
+             >
+    <ScrollView x:Name="Scr">
+
+        <Grid BackgroundColor="#08182b"
+		ColumnSpacing="0"
+		RowSpacing="0"
+		Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="450"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0"
+			Grid.Column="0">
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness"
+					iOS="0,25,0,0"/>
+                </StackLayout.Padding>
+                <Image Source="logop.png" Scale="0.4" HorizontalOptions="Center" VerticalOptions="Center" ></Image>
+
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="1"
+			Grid.Column="0"
+			Padding="20"
+			x:Name="ContentStackLayout">
+                <StackLayout Spacing="10" Padding="0,20,0,0" >
+                    <local:LoginPageEntry 
+                    Placeholder="Ad ve Soyad"
+					
+					PlaceholderColor="#f4f4f4"
+					BackgroundColor="#0f2641"
+					TextColor="White"
+					CornerRadius="10"
+					FontAttributes="Bold"
+                        x:Name="adSoyad">
+                    </local:LoginPageEntry>
+
+                    <local:LoginPageEntry 
+                    Placeholder="E-Mail"
+					
+					PlaceholderColor="#f4f4f4"
+					BackgroundColor="#0f2641"
+					TextColor="White"
+					CornerRadius="10"
+                    FontAttributes="Bold"
+                        x:Name="eMail">
+                    </local:LoginPageEntry>
+                    <local:LoginPageEntry	
+                    IsPassword="true"
+					Placeholder="Parola"
+					PlaceholderColor="#f4f4f4"
+					BackgroundColor="#0f2641"
+					TextColor="White"
+					FontAttributes="Bold"
+                        x:Name="sifre">
+                    </local:LoginPageEntry>
+                    <Button Text="Kaydol"
+					BackgroundColor="#f1404b"
+					BorderRadius="5"
+					BorderColor="Transparent"
+					TextColor="White"
+					HeightRequest="50"
+					FontAttributes="Bold"
+                            Clicked="kayitol">
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
+        

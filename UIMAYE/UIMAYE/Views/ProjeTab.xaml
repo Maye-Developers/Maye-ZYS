@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIMAYE.Views.ProjeTab"
+             xmlns:pages="clr-namespace:UIMAYE.Views;assembly=UIMAYE.Views"
+             Title="Projeler">
+    <ContentPage Title="Projeler" Icon="projeler.png">
+
+        <StackLayout>
+            <Grid Padding="10" VerticalOptions="Start" HorizontalOptions="End">
+                <Button Grid.Row="0" Grid.Column="0" TextColor="White" Text="Ayarlar" Clicked="ToolbarItem_Clicked_1" 
+                           BackgroundColor="#ee2560"
+					BorderRadius="5"
+					
+					HeightRequest="50"
+					FontAttributes="Bold"
+                        ></Button>
+                <Button Grid.Row="0" Grid.Column="1" TextColor="White" Text="Raporlama" Clicked="ToolbarItem_Clicked_2"
+                           BackgroundColor="#ee2560"
+					BorderRadius="5"
+					
+					HeightRequest="50"
+					FontAttributes="Bold"
+                        ></Button>
+            </Grid>
+            <ListView x:Name="degerler" ItemTapped="degerler_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20">
+                                <Label Text="{Binding .}" FontFamily="Helvetica" FontSize="20"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+    </ContentPage>
+    <ContentPage Title="Proje Ekle" Icon="pEkle.png">
+        <StackLayout Orientation="Vertical"
+                  HorizontalOptions="Center"
+                 VerticalOptions="Center">
+            
+                <Entry x:Name="ProjeAdi"
+                   Placeholder="Proje Adı Giriniz." 
+                  PlaceholderColor="#08182b"
+        TextColor="#08182b" 
+                   WidthRequest="200" ></Entry>
+
+            <ActivityIndicator IsRunning="False" x:Name="projInd"></ActivityIndicator>
+            <Button  Text="Proje Ekle"
+                    BackgroundColor="#ee2560"
+					BorderRadius="5"
+					TextColor="White"
+					HeightRequest="50"
+					FontAttributes="Bold"
+                    Clicked="projeEkle">
+            </Button>
+        </StackLayout>
+        
+    </ContentPage>
+
+</TabbedPage>

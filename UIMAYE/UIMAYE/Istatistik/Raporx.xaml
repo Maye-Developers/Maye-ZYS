@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIMAYE.Istatistik.Raporx"
+             xmlns:pages="clr-namespace:UIMAYE.Istatistik;assembly=UIMAYE.Istatistik"
+             Title="Raporlama">
+
+    <ContentPage Title="Klasik" BackgroundColor="White">
+        <ActivityIndicator IsRunning="False" x:Name="rapInd"></ActivityIndicator>
+        <StackLayout Orientation="Vertical">
+            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <Label  Grid.Row="0" Grid.Column="0" Text="Proje Adı"></Label>
+                <Picker  Grid.Row="0" Grid.Column="1" x:Name="projeadi"></Picker>
+                <Label  Grid.Row="1" Grid.Column="0" Text="Başlangıç Tarihi"></Label>
+                <DatePicker  Grid.Row="1" Grid.Column="1" x:Name="baslangic"></DatePicker>
+                <Label  Grid.Row="2" Grid.Column="0" Text="Bitiş Tarihi"></Label>
+                <DatePicker  Grid.Row="2" Grid.Column="1" x:Name="bitis"></DatePicker>
+
+                <Button Grid.Row="3" Grid.Column="1" Text="Getir" Clicked="Button_Clicked"></Button>
+
+                <Label  Grid.Row="4" Grid.Column="0" Text="Toplam Çalışma Zamanı" ></Label>
+                <Label  Grid.Row="4" Grid.Column="1" Text="0" x:Name="topCal"></Label>
+                <Label  Grid.Row="5" Grid.Column="0" Text="Toplam Mola Zamanı"></Label>
+                <Label  Grid.Row="5" Grid.Column="1" Text="0" x:Name="topMol"></Label>
+                <Label  Grid.Row="6" Grid.Column="0" Text="Toplam Bekleme Süresi"></Label>
+                <Label  Grid.Row="6" Grid.Column="1" Text="0" x:Name="topBekle"></Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="GrafikPage" Title="Grafik">
+    </ContentPage>
+</TabbedPage>
